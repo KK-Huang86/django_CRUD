@@ -1,0 +1,10 @@
+{% extends "layout/base.html" %} {%block content%}
+
+<h2>產品名稱：{{product.title}}</h2>
+<h2>產品價格：{{product.price}}</h2>
+<h2>產品描述：{{product.des}}</h2>
+
+<a href="{% url 'product:edit' product.id %}">編輯商品</a>
+<a href="{% url 'product:delete' product.id %}">刪除商品</a>
+
+{%endblock%}

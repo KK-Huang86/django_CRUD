@@ -1,0 +1,15 @@
+{% extends "layout/base.html" %} {%block content%}
+
+<h2>產品列表</h2>
+<a href="{% url 'product:new' %}">新增產品</a>
+<ul>
+  {% for product in products %}
+
+  <li>
+    <a href="{% url 'product:show' product.id %}"> {{product.title}}</a>
+    {{product.price}}
+  </li>
+  {%endfor%}
+</ul>
+
+{%endblock%}

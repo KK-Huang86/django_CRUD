@@ -1,0 +1,16 @@
+{% extends "layout/base.html" %} {%block content%}
+
+<h2>更新商品</h2>
+
+<form action="{% url 'product:show' product.id  %}" method="POST">
+  {%csrf_token%} {% for field in form %}
+
+  <label> {{field.label}}</label>
+  {{field}} {%endfor%}
+
+  <div>
+    <button>送出！</button>
+  </div>
+</form>
+
+{%endblock%}
